@@ -1,0 +1,24 @@
+pip install python-dotenv
+pip freeze > requirements.txt
+
+settings.py
+import os
+import dotenv
+
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
+
+.env
+ENGINE="django.db.backends.postgresql_psycopg2"
+HOST="aws-0-ap-south-1.pooler.supabase.com"
+NAME="postgres"
+USER="postgres.onkznuhbtlcvlxlzmezo"
+PASSWORD="Sd7zrew5$bnWS$@"
+PORT="6543"
+SECRET_KEY = 'django-insecure-_6u$6uuv8mfpwi$b2izjtas@kdvsbkd8(dxt-161#3w91h1m4a'
+
+.gitignore
+.env
+
+supabase: psql -h aws-0-ap-south-1.pooler.supabase.com -p 6543 -d postgres -U postgres.onkznuhbtlcvlxlzmezo
